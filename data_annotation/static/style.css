@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imageLoader {
+    width: fit-content;
+}
+
+.imagesControl {
+    display: flex;
+}
+
+.imagesControl button {
+    width: 200px;
+    margin: 0 10px;
+}
+
+#saveImage {
+    background-color: rgb(152, 167, 19);
+}
+
+#saveImage:hover {
+    background-color: rgb(115, 126, 16);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#imageContainer {
+    margin-top: 20px;
+    user-select: none;
+}
+
+#originalImage {
+    width: 1100px;
+}
+
+#imageCanvas {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.point-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.point {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Adjust as needed */
+}
+
+.remove-button {
+    font-size: 16px; /* Adjust the font size as needed */
+    background-color: #ff6666; /* Red color, adjust as needed */
+    color: #fff; /* White text color */
+    border: none;
+    padding: auto 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-button:hover {
+    background-color: #ff3333; /* Darker red on hover, adjust as needed */
+}

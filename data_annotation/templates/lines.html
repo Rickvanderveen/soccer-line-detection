@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Image line annotation</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Line annotation</h1>
+        <div class="imageLoader">
+            <label for="inputDir">Enter Image directory:</label>
+            <input type="text" id="inputDir" placeholder="Enter image path...">
+            <button onclick="loadImages()">Load Images</button>
+        </div>
+        <div id="imageContainer">
+            <div class="imagesControl">
+                <button onclick="previousImage()">Previous Image</button>
+                <button onclick="nextImage()">Next Image</button>
+                <button id="saveImage" onclick="saveImage()">Save Annotation</button>
+            </div>
+            <p>Image name: <span id="imageName"></span></p>
+            <p>Counter: <span id="imageIndex"></span> / <span id="totalImages"></span> | Points: <span id="totalPoints"></span></p>
+            <p>Annotation: <span id="annotationExistence">Does not exists</span></p>
+            <img id="originalImage" src="https://www.researchgate.net/publication/308125677/figure/fig4/AS:871963320930304@1584903664047/A-robot-draws-on-a-pen-tablet-The-pen-tablet-is-fixed-with-the-robots-right-hand-by-an.png">
+            <canvas id="imageCanvas"></canvas>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script_lines.js') }}"></script>
+</body>
+</html>
