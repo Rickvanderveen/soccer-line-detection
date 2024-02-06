@@ -23,11 +23,11 @@ To test the model the images come from the test folder and to predict/generate t
 
 ```bash
 <name_of_folder>/
-|-- test/
-|-- train_phase_1/
-|-- train_phase_2/
-|-- val/
-|-- generating/
+|-- test/                     # For testing
+|-- train_phase_1/            # For training
+|-- train_phase_2/            # For training
+|-- val/                      # For training
+|-- generating/               # For predicting/generating
 ```
 
 #### Training:
