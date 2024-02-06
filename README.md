@@ -21,14 +21,18 @@ Good luck!
 in the 'datasets' folder
 
 #### Training:
-For training you can run. Make sure to specify the correct dataroot (Name of the folder your images are located e.g. `--dataroot ./datasets/custom_data_selection`
+For training you can run the train shell script. Make sure to specify the correct dataroot (Name of the folder your images are located e.g. `--dataroot ./datasets/custom_data_selection`
 ```bash
 sh train.sh
 ```
 
 #### Testing:
 
-
+#### Predicting:
+To predict the lines of a new image you can use the following shell script (make sure to specify the correct dataroot).
+```bash
+sh generate.sh
+```
 
 ## Citation
 If you use this code for your research, please cite our papers.
