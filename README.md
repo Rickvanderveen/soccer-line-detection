@@ -18,7 +18,15 @@ Link: https://arxiv.org/abs/1810.10658
 Good luck!
 
 #### Prepare data:
-in the 'datasets' folder
+The images that will be used by the model are located in the 'datasets' folder. To train the model 3 folders are needed: train_phase_1, train_phase_2, val.
+To test the model the images come from the test folder and to predict/generate the new images are put in the folder generating
+
+<name_of_folder>/
+|-- test/
+|-- train_phase_1/
+|-- train_phase_2/
+|-- val/
+|-- generating/
 
 #### Training:
 For training you can run the train shell script. Make sure to specify the correct dataroot (Name of the folder your images are located e.g. `--dataroot ./datasets/custom_data_selection`
