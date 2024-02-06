@@ -1,6 +1,6 @@
 # This code is for soccer field marking detction using two conditional GANs.
 
-<img src="imgs/two_gan.jpg" width="900"/>
+<img src="results/0001.jpg" width="900"/>
 
 Most of the code comes from: https://github.com/meng-tsai/soccer-line-detection
 Which is based on the paper: "Sports Camera Calibration via Synthetic Data".
