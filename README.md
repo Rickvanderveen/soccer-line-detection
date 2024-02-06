@@ -6,12 +6,14 @@ Most of the code comes from: https://github.com/meng-tsai/soccer-line-detection
 Which is based on the paper: "Sports Camera Calibration via Synthetic Data".
 
 Link: https://arxiv.org/abs/1810.10658
+```
 @article{chen2018sports, 
   title={Sports Camera Calibration via Synthetic Data},   
   author={Chen, Jianhui and Little, James J},   
   journal={arXiv preprint arXiv:1810.10658},   
   year={2018}   
 }
+```
 
 ## Getting Started
 ### Installation
