@@ -19,21 +19,51 @@ Link: https://arxiv.org/abs/1810.10658
 ### Installation
 Good luck!
 
-#### Prepare data:
-The images that will be used by the model are located in the 'datasets' folder. To train the model 3 folders are needed: train_phase_1, train_phase_2, val.
-To test the model the images come from the test folder and to predict/generate the new images are put in the folder generating
+### Prepare data:
+The model training and testing do not receive the raw image but a concatenation of the image and the label (which is a segmentation or field lines). The training images need both a segmentation label and a field lines label (these will come in two seperate phases). The validation images only need the field lines.
+
+#### Data annotation
+If labels are not present, you can create them by drawing them by hand. This can be done with a very barebones browser app.
+Input images will need to be supplied for the app. The location is specified below.The `train_phase_1` and `train_phase_2` need to receive the same input images.
+```
+├── data_annotation
+│   ├── static
+│   │   ├── images
+│   │   │   ├── input
+│   │   │   │   ├── <name_of_set>
+│   │   │   │   │   ├── train_phase_1
+│   │   │   │   │   ├── train_phase_2
+│   │   │   │   │   ├── val
+│   │   │   │   │   ├── test
+```
+To start it, run the following command in the `data_annotation` folder:
 
 ```bash
-<name_of_folder>/
-|-- test/                     # For testing
-|-- train_phase_1/            # For training
-|-- train_phase_2/            # For training
-|-- val/                      # For training
-|-- generating/               # For predicting/generating
+python app.py
+```
+
+#### Create training/testing data
+The creation of the training and testing images can be done with the file `combine_A_and_B.py` in the `datasets` folder. An example:
+```bash
+python combine_A_and_B.py --fold_A ../data_annotation/static/images/input/custom_data_selection --fold_B ../data_annotation/static/images/annotated/custom_data_selection --fold_AB ./custom_data_selections\
+```
+The inputs are the original images `--fold_A`, and the labels `--fold_B`. The output folder is specified by `--fold_AB`.
+
+
+### Model
+The images intended for model training are located in the 'datasets' folder. Training the model requires three folders: `train_phase_1`, `train_phase_2`, and `val`. For model testing, images are sourced from the 'test' folder, and for prediction/generation, new images are placed in the 'generating' folder.
+```
+├── datasets
+│   ├──<name_of_set>
+│   │   ├── test                     # For testing
+│   │   ├── train_phase_1            # For training
+│   │   ├── train_phase_2            # For training
+│   │   ├── val                      # For training
+│   │   ├── generating               # For predicting/generating
 ```
 
 #### Training:
-For training you can run the train shell script. Make sure to specify the correct dataroot (Name of the folder your images are located e.g. `--dataroot ./datasets/custom_data_selection`
+For training you can run the train shell script. Make sure to specify the correct dataroot. The dataroot is the name of the folder your images are located e.g. `--dataroot ./datasets/custom_data_selection`
 ```bash
 sh train.sh
 ```
