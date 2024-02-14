@@ -17,7 +17,11 @@ Link: https://arxiv.org/abs/1810.10658
 
 ## Getting Started
 ### Installation
-Good luck!
+Code is tested on a conda environment on WSL2 Ubuntu 22.04.3 LTS.
+There is a `environment.yml` for the conda environment. To load the environment run the following command (conda should be already installed):
+```bash
+conda env create -f environment.yml
+```
 
 ### Prepare data:
 The model training and testing do not receive the raw image but a concatenation of the image and the label (which is a segmentation or field lines). The training images need both a segmentation label and a field lines label (these will come in two seperate phases). The validation images only need the field lines.

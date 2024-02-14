@@ -142,11 +142,11 @@ class Visualizer():
             if aspect_ratio > 1.0:
                 # im = imresize(im, (h, int(w * aspect_ratio)), interp='bicubic')
                 new_w = int(w * aspect_ratio)
-                resized_im = cv2.resize(im, (new_w, h), interpolation=cv2.INTER_CUBIC)
+                im = cv2.resize(im, (new_w, h), interpolation=cv2.INTER_CUBIC)
             if aspect_ratio < 1.0:
                 # im = imresize(im, (int(h / aspect_ratio), w), interp='bicubic')
                 new_h = int(h / aspect_ratio)
-                resized_im_2 = cv2.resize(im, (w, new_h), interpolation=cv2.INTER_CUBIC)
+                im = cv2.resize(im, (w, new_h), interpolation=cv2.INTER_CUBIC)
             util.save_image(im, save_path)
 
             ims.append(image_name)

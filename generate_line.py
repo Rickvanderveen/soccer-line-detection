@@ -14,6 +14,9 @@ opt.serial_batches = True  # no shuffle
 opt.no_flip = True  # no flip
 opt.continue_train = False
 
+OUTPUT_WIDTH = 640
+OUTPUT_HEIGHT = 480
+
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
 model = create_model(opt)
@@ -35,6 +38,9 @@ for i, data in enumerate(dataset):
     visuals = model.get_current_visuals()    
     img_path = model.get_image_paths()
     print('%04d: process image... %s' % (i, img_path))
+    for key, img in visuals.items():
+        if key != "real_D":
+            visuals[key] = cv2.resize(img, (OUTPUT_WIDTH, OUTPUT_HEIGHT), interpolation=cv2.INTER_CUBIC)
     comb = cv2.hconcat([visuals["real_A"], visuals["fake_D"]])
     for key, img in visuals.items(): 
         output_path = Path(output_dir, str(counter).zfill(4) + "_" + key + ".jpg")

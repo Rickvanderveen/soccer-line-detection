@@ -70,8 +70,6 @@ class TwoPix2PixModel:
             if len(self.gpu_ids) > 0:
                 input_A = input_A.cuda(self.gpu_ids[0], non_blocking=True)
                 input_B = input_B.cuda(self.gpu_ids[0], non_blocking=True)
-            # input_A = input_A.cuda(self.gpu_ids, non_blocking=True)
-            # input_B = input_B.cuda(self.gpu_ids, non_blocking=True)
             self.input_A = input_A
             self.input_B = input_B
             self.image_paths = input['A_paths' if AtoB else 'B_paths']        
