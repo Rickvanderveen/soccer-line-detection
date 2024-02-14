@@ -2,7 +2,7 @@
 
 <img src="results/custom_data_selection/0001.jpg" width="900"/>
 
-Most of the code comes from: https://github.com/meng-tsai/soccer-line-detection
+Most of the code comes from: https://github.com/meng-tsai/soccer-line-detection.
 Which is based on the paper: "Sports Camera Calibration via Synthetic Data".
 
 Link: https://arxiv.org/abs/1810.10658
@@ -18,7 +18,7 @@ Link: https://arxiv.org/abs/1810.10658
 ## Getting Started
 ### Installation
 Code is tested on a conda environment on WSL2 Ubuntu 22.04.3 LTS.
-There is a `environment.yml` for the conda environment. To load the environment run the following command (conda should be already installed):
+There is an `environment.yml` for the conda environment. To create the environment you can run the following command (conda should be already installed):
 ```bash
 conda env create -f environment.yml
 ```
